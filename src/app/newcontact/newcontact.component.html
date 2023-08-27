@@ -1,1 +1,42 @@
-<h1>New Contact</h1>
+<div id="mainContainer">
+    <h1>New Contact</h1>
+
+    <div id="contactCard">
+        <form [formGroup]="contactForm" class="myform" (ngSubmit)="onSubmit()">
+
+            <mat-card>
+                <mat-card-content>
+                    <div class="my-Inputs">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First Name</mat-label>
+                            <input matInput formControlName="firstName">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput formControlName="lastName">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput placeholder="For example +49 1234 123 12 12" formControlName="phoneNumber">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="address">
+                        </mat-form-field>
+                    </div>
+
+                </mat-card-content>
+
+                <mat-card-actions align="end">
+                    <button class="action-buttons" (click)="onCancel()" type="button" mat-raised-button color="warn">Cancel</button>
+                    <button class="action-buttons" mat-raised-button color="primary" [disabled]="contactForm.invalid"
+                        type="submit">Create</button>
+                </mat-card-actions>
+            </mat-card>
+        </form>
+    </div>
+
+</div>
